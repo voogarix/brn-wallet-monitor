@@ -3,6 +3,9 @@ import { Line, Bar } from 'react-chartjs-2';
 import { fetchTransactions } from '../api/caldera';
 import { processTransactions } from '../utils/processor';
 import { validateBRNAddress } from '../utils/validation';
+import caldera from '../api/caldera';
+import processor from '../utils/processor';
+import validation from '../utils/validation';
 
 export default function App() {
   const [address, setAddress] = useState('');
