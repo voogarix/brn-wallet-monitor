@@ -1,17 +1,11 @@
-const webpack = require('webpack');
+const path = require('path');
 
-module.exports = function override(config) {
-  config.resolve.fallback = {
-    ...config.resolve.fallback,
-    "path": require.resolve("path-browserify"),
-    "fs": false
-  };
-  
-  config.plugins.push(
-    new webpack.ProvidePlugin({
-      process: 'process/browser',
-    })
-  );
-
-  return config;
+module.exports = {
+  webpack: (config) => {
+    config.resolve.modules = [
+      ...config.resolve.modules,
+      path.resolve(__dirname, 'src/renderer')
+    ];
+    return config;
+  }
 };
