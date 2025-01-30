@@ -3,6 +3,13 @@ import { Line, Bar } from 'react-chartjs-2';
 import { fetchTransactions } from '../api/caldera';
 import { processTransactions } from '../utils/processor';
 import { validateBRNAddress } from '../utils/validation';
+import React from 'react';
+
+const App = () => {
+  return <div>BRN Wallet Monitor</div>;
+};
+
+export default App;
 
 export default function App() {
   const [address, setAddress] = useState('');
