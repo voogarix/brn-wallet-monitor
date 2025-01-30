@@ -2,10 +2,10 @@
   "name": "brn-wallet-monitor",
   "version": "1.0.0",
   "main": "src/main/main.js",
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+ "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "electron-start": "electron . --disable-gpu",
     "dev": "concurrently \"npm run start\" \"wait-on http://localhost:3000 && npm run electron-start\""
 },
