@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "main": "src/main/main.js",
   "scripts": {
-    "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
-    "react-start": "react-scripts start",
-    "electron-start": "wait-on http://localhost:3000 && electron . --disable-gpu",
-    "build": "react-scripts build",
-    "package": "electron-builder",
-    "test": "react-scripts test"
-  },
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "electron-start": "electron . --disable-gpu",
+    "dev": "concurrently \"npm run start\" \"wait-on http://localhost:3000 && npm run electron-start\""
+},
   "dependencies": {
     "chart.js": "^3.7.0",
     "electron": "^21.0.1",
