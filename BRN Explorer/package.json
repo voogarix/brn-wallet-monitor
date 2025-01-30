@@ -1,0 +1,46 @@
+{
+    "name": "brn-wallet-monitor",
+    "version": "1.0.0",
+    "main": "src/main/main.js",
+    "scripts": {
+      "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
+      "react-start": "react-scripts start",
+      "electron-start": "wait-on http://localhost:3000 && electron .",
+      "build": "react-scripts build",
+      "package": "electron-builder",
+      "test": "react-scripts test"
+    },
+    "dependencies": {
+      "chart.js": "^3.7.0",
+      "electron": "^21.0.1",
+      "react": "^18.2.0",
+      "react-chartjs-2": "^4.3.1",
+      "react-dom": "^18.2.0",
+      "react-scripts": "^5.0.1"
+    },
+    "devDependencies": {
+      "concurrently": "^7.4.0",
+      "electron-builder": "^23.6.0",
+      "wait-on": "^6.0.1"
+    },
+    "build": {
+      "appId": "com.brn.walletmonitor",
+      "productName": "BRN Wallet Monitor",
+      "directories": {
+        "output": "dist"
+      },
+      "files": [
+        "src/main/**/*",
+        "build/**/*"
+      ],
+      "mac": {
+        "category": "public.app-category.finance"
+      },
+      "win": {
+        "target": "nsis"
+      },
+      "linux": {
+        "target": "AppImage"
+      }
+    }
+  }
